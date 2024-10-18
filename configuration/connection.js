@@ -1,7 +1,7 @@
 require('dotenv').config()
 const dev01 = {
   user: process.env.DB_USER,
-  host: 'db',
+  host: process.env.DB_HOST,
   database: process.env.DB_NAME,
   password: process.env.DB_PASSWORD,  // Make sure this is loading the correct password
   port: process.env.DB_PORT || 5432,

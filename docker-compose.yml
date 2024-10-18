@@ -6,22 +6,10 @@ services:
     volumes:
       - /Users/belletheere/Desktop/Seniorproject/coding/backend  # Map the current directory to the container
     environment:
-      - DB_HOST=db
+      - DB_HOST=${DB_HOST}
       - DB_PORT=5432
-      - DB_USER=postgres
-      - DB_PASSWORD=090773
-      - DB_NAME=SeniorProj
-    depends_on:
-      - db
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
 
-  db:
-    image: postgres:16
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=090773
-      - POSTGRES_DB=SeniorProj
-    volumes:
-      - ~/my_pgdata:/var/lib/postgresql/data #map pg_data local to location in docker
-      - ~/my_pgdata/ssl:/var/lib/postgresql/ssl
-    ports:
-      - "5432:5432"
+ 
